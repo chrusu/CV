@@ -25,3 +25,4 @@ Ich bin passionierter Frontend-Entwickler und UX/UI-Designer mit einem Flair fü
 
 Ich versuche möglichst schlanke, wartungsfreie Lösungen zu erarbeiten.
 
+Dabei setze ich auf AI - aber nur wo es Sinn ergibt!

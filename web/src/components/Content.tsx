@@ -24,7 +24,7 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
     const displayLines = Math.max(lineCount, minLines);
 
     return (
-        <div className="h-full p-2 md:p-4 flex flex-col">
+        <div className="h-full p-2 pt-6 md:p-4 flex flex-col">
             <div className="relative flex-1 flex flex-col min-h-0">
                 
                 {/* Border & Label Layer */}

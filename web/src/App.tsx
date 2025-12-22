@@ -62,7 +62,7 @@ function App() {
         className="h-screen w-full overflow-hidden transition-colors duration-300"
         style={{ background: 'var(--bg-image)', backgroundAttachment: 'fixed', backgroundSize: 'cover' }}
     >
-      <div className="flex flex-col h-full text-text-body font-mono p-2 md:p-6 box-border max-w-[1200px] mx-auto w-full">
+      <div className="flex flex-col h-full text-text-body font-mono p-2 pt-8 md:p-6 box-border max-w-[1200px] mx-auto w-full">
       
       {/* Outer Frame Container */}
       <div className="relative flex flex-1 min-h-0 mb-2">
@@ -83,15 +83,15 @@ function App() {
         </div>
 
         {/* Content Layer (Clipped) */}
-        <div className="flex flex-1 w-full h-full overflow-hidden rounded-ui z-10 relative transition-all duration-300">
+        <div className="flex flex-col md:flex-row flex-1 w-full h-full overflow-hidden rounded-ui z-10 relative transition-all duration-300">
             
             {/* Mobile Header */}
             <div 
-                className="md:hidden absolute top-0 left-0 right-0 h-14 border-b border-ui-border-ui flex items-center px-4 z-40 transition-colors duration-300"
+                className="md:hidden h-20 border-b border-ui-border-ui flex items-center px-4 z-40 transition-colors duration-300 shrink-0"
             >
                 <button 
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="text-ui-highlight hover:text-white flex items-center gap-2 transition-colors duration-300 p-2"
+                className="text-ui-highlight hover:text-white flex items-center gap-2 transition-colors duration-300 p-2 ml-1 mt-6"
                 >
                 {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
                 <span className="text-ui-highlight text-lg">menu</span>
@@ -101,7 +101,7 @@ function App() {
             {/* Sidebar */}
             <div 
                 className={`
-                absolute md:relative z-30 top-12 md:top-0 bottom-0 left-0 
+                absolute md:relative z-50 top-20 md:top-0 bottom-0 left-0 
                 w-64 transform transition-transform duration-300 ease-in-out
                 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
                 ${isMobile ? 'shadow-2xl' : ''}
@@ -127,7 +127,7 @@ function App() {
             )}
 
             {/* Main Content Area */}
-            <div className="flex-1 flex flex-col h-full pt-14 md:pt-4 w-full relative overflow-hidden transition-colors duration-300">
+            <div className="flex-1 flex flex-col h-full pt-0 md:pt-4 w-full relative overflow-hidden transition-colors duration-300">
                 <Content file={selectedFile} />
             </div>
         </div>
