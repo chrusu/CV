@@ -194,7 +194,12 @@
             2024,
             2025
           ],
-          "link": "https://www.agfar.ch"
+          "link": "https://www.agfar.ch",
+          "cta": {
+            "text": "sondermaschine us bieu",
+            "button": "das wotti gseh!",
+            "link": "https://www.agfar.ch"
+          }
         },
         "content": "\n# Agfar AG\n\nFür die AGFAR (AG für Automation und Robotik) durfte ich einen neuen Webauftritt gestalten und umsetzen.\n\nDabei sollte die technische DNA der Firma auf der Webseite sichtbar sein.\n\n![Startseite AGFAR AG](agfar.png)\n\nAls grösste Schwierigkeit erwies sich, die vielen Komplexen Inhalte auf der Webseite so zu strukturieren, dass sie zum einen gefunden, aber auch verstanden werden.\n\n![Pink Lady - Die Agfar-Juckebox](<pink lady.png>)\n"
       },
@@ -213,7 +218,13 @@
           ],
           "year": [
             2024
-          ]
+          ],
+          "link": "https://www.netiva.ch",
+          "cta": {
+            "text": "netiva.ch",
+            "button": "muesch gseh ha!",
+            "link": "https://www.netiva.ch"
+          }
         },
         "content": "\n# Netiva\n\nDie Netiva mit Sitz in Liebefeld durfte ich zu einer neuen Webseite mit Webflow begleiten.\n\n![neue startseite netiva.ch](netiva.png)\n\nDurch die speditive Zusammenarbeit konnte die neue Webseite innert kürzester Zeit live gehen.\n"
       },
@@ -234,7 +245,13 @@
           ],
           "year": [
             2025
-          ]
+          ],
+          "link": "https://www.openairambielersee.ch",
+          "cta": {
+            "text": "d website i vouer pracht!",
+            "button": "das wotti gseh!",
+            "link": "https://www.openairambielersee.ch"
+          }
         },
         "content": "\n# Openair am Bielersee\n\nDie etwas andere Webseite - für das etwas andere Openair.\n\nDas Openair am Bielersee ist bewusst anders:\n\n- Bühne aus Holze\n- Eigentlich alles aus Holz\n- Keine Sponsoren\n- Familiäre Atmosphäre\n\nSeit über 30 Jahren begeistert das etas ander Openair seine besucher und ist regelmässig Ausverkauft.\n\nDiesen Spirit wollten wir als Webseite umsetzen. So entstand die Idee, der Webseite eine Bühne zu geben.\n\n![startseite openair am bielersee](openair_am_bielersee.png)\n\nSo sieht das Openair in echt aus!\n\n![Openair bei Nacht](openair_nacht.jpg)\n"
       },

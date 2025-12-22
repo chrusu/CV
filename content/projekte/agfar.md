@@ -15,6 +15,11 @@ year:
 - 2025
 
 link: https://www.agfar.ch
+
+cta:
+  text: "sondermaschine us bieu"
+  button: "das wotti gseh!"
+  link: https://www.agfar.ch
 ---
 
 # Agfar AG
