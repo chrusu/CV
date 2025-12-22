@@ -59,9 +59,10 @@ function App() {
 
   return (
     <div 
-        className="flex flex-col h-screen text-text-body overflow-hidden font-mono p-2 md:p-6 box-border transition-colors duration-300"
+        className="h-screen w-full overflow-hidden transition-colors duration-300"
         style={{ background: 'var(--bg-image)', backgroundAttachment: 'fixed', backgroundSize: 'cover' }}
     >
+      <div className="flex flex-col h-full text-text-body font-mono p-2 md:p-6 box-border max-w-[1200px] mx-auto w-full">
       
       {/* Outer Frame Container */}
       <div className="relative flex flex-1 min-h-0 mb-2">
@@ -86,14 +87,14 @@ function App() {
             
             {/* Mobile Header */}
             <div 
-                className="md:hidden absolute top-0 left-0 right-0 h-12 border-b border-ui-border-ui flex items-center px-4 z-40 transition-colors duration-300"
+                className="md:hidden absolute top-0 left-0 right-0 h-14 border-b border-ui-border-ui flex items-center px-4 z-40 transition-colors duration-300"
             >
                 <button 
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="text-ui-highlight hover:text-white flex items-center gap-2 transition-colors duration-300"
+                className="text-ui-highlight hover:text-white flex items-center gap-2 transition-colors duration-300 p-2"
                 >
-                {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
-                <span className="text-ui-highlight">menu</span>
+                {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+                <span className="text-ui-highlight text-lg">menu</span>
                 </button>
             </div>
 
@@ -126,16 +127,17 @@ function App() {
             )}
 
             {/* Main Content Area */}
-            <div className="flex-1 flex flex-col h-full pt-12 md:pt-0 w-full relative overflow-hidden transition-colors duration-300">
+            <div className="flex-1 flex flex-col h-full pt-14 md:pt-4 w-full relative overflow-hidden transition-colors duration-300">
                 <Content file={selectedFile} />
             </div>
         </div>
 
       </div>
 
-      {/* Theme Switcher Footer */}
-      <div className="flex justify-center">
-        <ThemeSwitcher />
+        {/* Theme Switcher Footer */}
+        <div className="flex justify-center">
+          <ThemeSwitcher />
+        </div>
       </div>
     </div>
   );

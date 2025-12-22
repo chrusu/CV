@@ -41,7 +41,7 @@
         "type": "file",
         "name": "ausbildungen.md",
         "frontmatter": {
-          "skipped": [
+          "grundausbildung": [
             "primary school",
             "secondary school"
           ],

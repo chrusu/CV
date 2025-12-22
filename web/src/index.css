@@ -9,20 +9,26 @@ html, body, #root {
 }
 
 /* Custom scrollbar for dark theme */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-ui) var(--color-bg-secondary);
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #13141f;
+    background: var(--color-bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 5px;
+    background: var(--color-border-ui);
+    border-radius: var(--radius-ui);
+    border: 2px solid var(--color-bg-secondary); /* Adds padding around thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: var(--color-ui-highlight);
 }

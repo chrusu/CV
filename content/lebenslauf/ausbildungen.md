@@ -1,7 +1,8 @@
 ---
-skipped:
+grundausbildung:
 - primary school
 - secondary school
+
 timeline:
   - title: Interaction Design HF
     institution: Schule für Gestaltung Bern

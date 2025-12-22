@@ -25,9 +25,9 @@ const SidebarItem: React.FC<{
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <span className="mr-2 opacity-70">
-                        {isOpen ? <FolderOpen size={16} strokeWidth={2} /> : <Folder size={16} strokeWidth={2} />}
+                        {isOpen ? <FolderOpen size={18} strokeWidth={2} /> : <Folder size={18} strokeWidth={2} />}
                     </span>
-                    <span className="text-sm font-bold tracking-wide">{node.name}</span>
+                    <span className="text-base font-bold tracking-wide">{node.name}</span>
                 </div>
                 {isOpen && (
                     <div className='flex flex-col ml-5 pl-2 border-l border-ui-border-ui/20 my-1'>
@@ -47,7 +47,7 @@ const SidebarItem: React.FC<{
 
     return (
         <div
-            className={`flex items-center gap-2 py-1.5 px-2 cursor-pointer transition-all rounded-md mx-2 font-mono text-sm ${
+            className={`flex items-center gap-2 py-1.5 px-2 cursor-pointer transition-all rounded-md mx-2 font-mono text-base ${
                 isSelected 
                 ? 'bg-ui-highlight/10 text-ui-highlight font-bold' 
                 : 'text-ui-item-file hover:text-ui-item-selected hover:bg-ui-highlight/5'
@@ -55,7 +55,7 @@ const SidebarItem: React.FC<{
             onClick={() => onSelectFile(node)}
         >
             <span className={`shrink-0 ${isSelected ? 'opacity-100' : 'opacity-70'}`}>
-                <FileText size={16} strokeWidth={2} />
+                <FileText size={18} strokeWidth={2} />
             </span>
             <span className="truncate">{node.name}</span>
         </div>
