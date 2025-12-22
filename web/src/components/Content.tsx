@@ -148,6 +148,9 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                                 </a>
                             </div>
                         )}
+                        
+                        {/* Bottom Spacer */}
+                        <div className="h-2 w-full"></div>
                     </div>
                 </div>
             </div>
