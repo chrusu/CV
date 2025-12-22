@@ -10,6 +10,13 @@ technologies / tools:
 
 year: 
 - 2024
+
+link: https://www.netiva.ch
+
+cta:
+  text: "netiva.ch"
+  button: "muesch gseh ha!"
+  link: https://www.netiva.ch
 ---
 
 # Netiva

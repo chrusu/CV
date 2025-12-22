@@ -12,6 +12,13 @@ technologies / tools:
 
 year: 
 - 2025
+
+link: https://www.openairambielersee.ch
+
+cta:
+  text: "d website i vouer pracht!"
+  button: "das wotti gseh!"
+  link: https://www.openairambielersee.ch
 ---
 
 # Openair am Bielersee
