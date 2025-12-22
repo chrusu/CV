@@ -63,5 +63,3 @@ timeline:
       - Webentwicklung [https://www.bielertagblatt.ch](https://www.bielertagblatt.ch)
       - Webentwicklung von Kundenwebseiten mit Joomla
 ---
-
-# Jobs

@@ -21,5 +21,3 @@ timeline:
     date: August 1999 - Juli 2003
     location: Biel / Bern
 ---
-
-# Ausbildungen
