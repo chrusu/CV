@@ -1,14 +1,63 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ExternalLink } from 'lucide-react';
 import type { FileNode } from '../types';
+import { Lightbox } from './Lightbox';
 
 interface ContentProps {
     file: FileNode | null;
 }
 
 export const Content: React.FC<ContentProps> = ({ file }) => {
+    const [lightboxImage, setLightboxImage] = useState<{src: string, alt?: string} | null>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [contentHeight, setContentHeight] = useState(0);
+    const [minLines, setMinLines] = useState(0);
+
+    useEffect(() => {
+        const updateMinLines = () => {
+            // 28px per line, 64px padding (py-8)
+            const lines = Math.ceil((window.innerHeight - 64) / 28);
+            setMinLines(lines);
+        };
+        
+        updateMinLines();
+        window.addEventListener('resize', updateMinLines);
+        return () => window.removeEventListener('resize', updateMinLines);
+    }, []);
+
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!scrollContainerRef.current) return;
+            
+            if (e.key === 'PageDown') {
+                e.preventDefault();
+                scrollContainerRef.current.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+            } else if (e.key === 'PageUp') {
+                e.preventDefault();
+                scrollContainerRef.current.scrollBy({ top: -window.innerHeight * 0.8, behavior: 'smooth' });
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
+    useEffect(() => {
+        if (!contentRef.current) return;
+        
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                setContentHeight(entry.contentRect.height);
+            }
+        });
+        
+        observer.observe(contentRef.current);
+        return () => observer.disconnect();
+    }, [file]);
+
     if (!file) {
         return (
             <div className="h-full flex items-center justify-center text-gray-500 font-mono">
@@ -17,11 +66,11 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
         );
     }
 
-    const lineCount = file ? (file.content.split('\n').length + (file.frontmatter ? Object.keys(file.frontmatter).length + 2 : 0)) : 0;
-    
-    // Calculate minimum lines to fill screen (approximate)
-    const minLines = Math.ceil(typeof window !== 'undefined' ? window.innerHeight / 28 : 30);
-    const displayLines = Math.max(lineCount, minLines);
+    // Calculate lines based on content height
+    // 28px is the fixed height of each line number
+    // We add a small buffer for padding differences
+    const contentLines = Math.ceil((contentHeight + 20) / 28);
+    const displayLines = Math.max(minLines, contentLines, 1);
 
     return (
         <div className="h-full p-2 pt-6 md:p-4 flex flex-col">
@@ -37,10 +86,13 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                 </div>
 
                 {/* Scrollable Content */}
-                <div className="flex-1 overflow-y-auto custom-scrollbar rounded-ui z-10 flex transition-all duration-300">
+                <div 
+                    ref={scrollContainerRef}
+                    className="flex-1 overflow-y-auto custom-scrollbar rounded-ui z-10 flex transition-all duration-300"
+                >
                     {/* Line Numbers */}
-                    <div className="hidden md:flex flex-col items-end py-8 pl-4 text-gray-500/50 font-mono text-base select-none bg-bg-primary/50 min-h-full">
-                        <div className="border-r border-ui-border-ui/10 pr-2">
+                    <div className="hidden md:flex flex-col items-end pl-4 text-gray-500/50 font-mono text-base select-none bg-bg-primary/50 min-h-full">
+                        <div className="pr-2 py-8 border-r border-ui-border-ui/10">
                             {Array.from({ length: displayLines }).map((_, i) => (
                                 <div key={i} className="leading-relaxed h-[28px]">{i + 1}</div>
                             ))}
@@ -48,6 +100,7 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                     </div>
 
                     <div className="flex-1 p-3 md:p-6">
+                        <div ref={contentRef}>
                         {/* Frontmatter display */}
                         {file.frontmatter && Object.keys(file.frontmatter).length > 0 && (
                             <div className="mb-8 font-mono text-[18px]">
@@ -115,7 +168,14 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                                     img: ({node, ...props}) => {
                                         const src = props.src || '';
                                         const newSrc = src.startsWith('http') ? src : `./assets/${src}`;
-                                        return <img {...props} src={newSrc} className="rounded-xl shadow-lg max-w-full border border-gray-800" />;
+                                        return (
+                                            <img 
+                                                {...props} 
+                                                src={newSrc} 
+                                                className="rounded-xl shadow-lg max-w-full border border-gray-800 cursor-zoom-in hover:opacity-90 transition-opacity" 
+                                                onClick={() => setLightboxImage({ src: newSrc, alt: props.alt })}
+                                            />
+                                        );
                                     },
                                     a: ({node, ...props}) => (
                                         <a {...props} className="text-ui-link hover:text-ui-link hover:underline" target="_blank" rel="noopener noreferrer" />
@@ -150,10 +210,18 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                         )}
                         
                         {/* Bottom Spacer */}
-                        <div className="h-2 w-full"></div>
+                        <div className="h-20 w-full"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+            {lightboxImage && (
+                <Lightbox 
+                    src={lightboxImage.src} 
+                    alt={lightboxImage.alt} 
+                    onClose={() => setLightboxImage(null)} 
+                />
+            )}
         </div>
     );
 };

@@ -63,26 +63,26 @@ export const themes: Theme[] = [
         borderRadius: '0.75rem',
         backgroundImage: 'linear-gradient(to bottom right, #fcf9ee, #dcd5c6)',
     },
-    {
-        id: 'nerd',
-        name: 'Nerd',
-        key: 'N',
-        colors: {
-            '--color-bg-primary': '#0f0518', // Very dark violet
-            '--color-bg-secondary': '#08020d',
-            '--color-text-body': '#39ff14', // Neon Green
-            '--color-text-heading': '#ff00ff', // Neon Magenta
-            '--color-link': '#39ff14', // Neon Green
-            '--color-border-outer': '#39ff14', // Neon Green
-            '--color-border-ui': '#39ff14', // Neon Green
-            '--color-item-folder': '#39ff14', // Neon Green
-            '--color-item-file': '#39ff14', // Neon Green
-            '--color-item-selected': '#ffff00', // Neon Yellow
-            '--color-ui-highlight': '#ffff00', // Neon Yellow
-        },
-        font: '"Courier Prime", monospace',
-        borderRadius: '0px',
-    },
+    // {
+    //     id: 'nerd',
+    //     name: 'Nerd',
+    //     key: 'N',
+    //     colors: {
+    //         '--color-bg-primary': '#0f0518', // Very dark violet
+    //         '--color-bg-secondary': '#08020d',
+    //         '--color-text-body': '#39ff14', // Neon Green
+    //         '--color-text-heading': '#ff00ff', // Neon Magenta
+    //         '--color-link': '#39ff14', // Neon Green
+    //         '--color-border-outer': '#39ff14', // Neon Green
+    //         '--color-border-ui': '#39ff14', // Neon Green
+    //         '--color-item-folder': '#39ff14', // Neon Green
+    //         '--color-item-file': '#39ff14', // Neon Green
+    //         '--color-item-selected': '#ffff00', // Neon Yellow
+    //         '--color-ui-highlight': '#ffff00', // Neon Yellow
+    //     },
+    //     font: '"Courier Prime", monospace',
+    //     borderRadius: '0px',
+    // },
     {
         id: 'neon-violet',
         name: 'Neon Violet',
@@ -97,11 +97,11 @@ export const themes: Theme[] = [
             '--color-border-ui': '#ff00cc', // Hot Pink
             '--color-item-folder': '#d600ff', // Electric Violet
             '--color-item-file': '#b080e0', // Lighter Violet for better contrast
-            '--color-item-selected': '#ff00ff', // Magenta
+            '--color-item-selected': '#000000ff', // Magenta
             '--color-ui-highlight': '#ff00cc', // Hot Pink
         },
         font: '"Courier Prime", monospace',
         borderRadius: '0px',
-        backgroundImage: 'radial-gradient(circle at 20% 50%, #770099 0%, transparent 50%), radial-gradient(circle at 80% 30%, #990055 0%, transparent 50%), radial-gradient(circle at 50% 80%, #5500aa 0%, transparent 50%), linear-gradient(to bottom right, #1a0024, #050008)',
+        backgroundImage: 'radial-gradient(circle at 20% 50%, #510267ff 0%, transparent 70%), radial-gradient(circle at 80% 30%, #600537ff 0%, transparent 70%), radial-gradient(circle at 50% 80%, #390072ff 0%, transparent 70%), linear-gradient(to bottom right, #1a0024, #050008)',
     },
 ];

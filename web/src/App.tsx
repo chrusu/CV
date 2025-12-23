@@ -1,28 +1,52 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Content } from './components/Content';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import contentData from './data/content.json';
 import type { ContentNode, FileNode } from './types';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUp, ArrowDown, CornerDownLeft } from 'lucide-react';
 
 function App() {
   const [data, setData] = useState<ContentNode[]>([]);
   const [selectedFile, setSelectedFile] = useState<FileNode | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  
+  // New state for keyboard navigation
+  const [expandedPaths, setExpandedPaths] = useState<Set<string>>(new Set());
+  const [focusedPath, setFocusedPath] = useState<string | null>(null);
+
+  // Helper to collect all folder paths to expand them by default
+  const getAllFolderPaths = (nodes: ContentNode[], parentPath = ''): string[] => {
+    let paths: string[] = [];
+    for (const node of nodes) {
+      const path = parentPath ? `${parentPath}/${node.name}` : node.name;
+      if (node.type === 'folder') {
+        paths.push(path);
+        if (node.children) {
+          paths = paths.concat(getAllFolderPaths(node.children, path));
+        }
+      }
+    }
+    return paths;
+  };
 
   useEffect(() => {
     // Cast the imported JSON to our type
     const nodes = contentData as unknown as ContentNode[];
     setData(nodes);
 
+    // Expand all folders by default
+    const allPaths = getAllFolderPaths(nodes);
+    setExpandedPaths(new Set(allPaths));
+
     // Find and select "about me.md" by default
-    const findFile = (nodes: ContentNode[], name: string): FileNode | null => {
+    const findFile = (nodes: ContentNode[], name: string, parentPath = ''): { node: FileNode, path: string } | null => {
       for (const node of nodes) {
-        if (node.type === 'file' && node.name === name) return node as FileNode;
+        const path = parentPath ? `${parentPath}/${node.name}` : node.name;
+        if (node.type === 'file' && node.name === name) return { node: node as FileNode, path };
         if (node.type === 'folder' && node.children) {
-          const found = findFile(node.children, name);
+          const found = findFile(node.children, name, path);
           if (found) return found;
         }
       }
@@ -31,7 +55,11 @@ function App() {
 
     const defaultFile = findFile(nodes, 'about me.md');
     if (defaultFile) {
-      setSelectedFile(defaultFile);
+      setSelectedFile(defaultFile.node);
+      setFocusedPath(defaultFile.path);
+    } else if (nodes.length > 0) {
+        // Fallback focus
+        setFocusedPath(nodes[0].name);
     }
 
     // Check for mobile screen size
@@ -56,6 +84,68 @@ function App() {
       setIsSidebarOpen(false);
     }
   };
+
+  const toggleExpand = (path: string) => {
+    const newExpanded = new Set(expandedPaths);
+    if (newExpanded.has(path)) {
+      newExpanded.delete(path);
+    } else {
+      newExpanded.add(path);
+    }
+    setExpandedPaths(newExpanded);
+  };
+
+  // Flatten visible nodes for keyboard navigation
+  const getVisibleNodes = useCallback(() => {
+    const flatten = (nodes: ContentNode[], parentPath = ''): { node: ContentNode; path: string }[] => {
+      let flat: { node: ContentNode; path: string }[] = [];
+      for (const node of nodes) {
+        const path = parentPath ? `${parentPath}/${node.name}` : node.name;
+        flat.push({ node, path });
+        if (node.type === 'folder' && expandedPaths.has(path) && node.children) {
+          flat = flat.concat(flatten(node.children, path));
+        }
+      }
+      return flat;
+    };
+    return flatten(data);
+  }, [data, expandedPaths]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ignore if modifier keys are pressed (except shift maybe?)
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+      // Only handle navigation keys if sidebar is visible (or always on desktop)
+      if (isMobile && !isSidebarOpen) return;
+
+      const visibleNodes = getVisibleNodes();
+      const currentIndex = visibleNodes.findIndex(item => item.path === focusedPath);
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextIndex = currentIndex < visibleNodes.length - 1 ? currentIndex + 1 : 0;
+        setFocusedPath(visibleNodes[nextIndex].path);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : visibleNodes.length - 1;
+        setFocusedPath(visibleNodes[prevIndex].path);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (currentIndex !== -1) {
+          const item = visibleNodes[currentIndex];
+          if (item.node.type === 'folder') {
+            toggleExpand(item.path);
+          } else {
+            handleSelectFile(item.node as FileNode);
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [getVisibleNodes, focusedPath, isMobile, isSidebarOpen]);
 
   return (
     <div 
@@ -109,9 +199,13 @@ function App() {
                 style={isMobile ? { background: 'var(--bg-image)', backgroundAttachment: 'fixed', backgroundSize: 'cover' } : {}}
             >
                 <Sidebar 
-                nodes={data} 
-                onSelectFile={handleSelectFile} 
-                selectedFile={selectedFile} 
+                    nodes={data} 
+                    onSelectFile={handleSelectFile} 
+                    selectedFile={selectedFile}
+                    expandedPaths={expandedPaths}
+                    onToggleExpand={toggleExpand}
+                    focusedPath={focusedPath}
+                    onFocusItem={setFocusedPath}
                 />
             </div>
 
@@ -134,8 +228,24 @@ function App() {
 
       </div>
 
-        {/* Theme Switcher Footer */}
-        <div className="flex justify-center">
+        {/* Footer: Theme Switcher & Manual */}
+        <div className="flex justify-between items-center px-4 text-ui-item-folder/60 text-xs md:text-sm">
+          <div className="hidden md:flex items-center gap-4">
+            <div className="flex items-center gap-1">
+                <ArrowUp size={14} />
+                <ArrowDown size={14} />
+                <span>nav</span>
+            </div>
+            <div className="flex items-center gap-1">
+                <CornerDownLeft size={14} />
+                <span>select/toggle</span>
+            </div>
+            <div className="flex items-center gap-1">
+                <span className="border border-ui-item-folder/40 px-1 rounded text-[10px]">PgUp</span>
+                <span className="border border-ui-item-folder/40 px-1 rounded text-[10px]">PgDn</span>
+                <span>scroll</span>
+            </div>
+          </div>
           <ThemeSwitcher />
         </div>
       </div>

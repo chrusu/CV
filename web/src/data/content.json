@@ -28,8 +28,22 @@
       {
         "type": "file",
         "name": "interessen.md",
-        "frontmatter": {},
-        "content": ""
+        "frontmatter": {
+          "outdoor": [
+            "🎿 backcountry skiing",
+            "🛶 white-water-kajak",
+            "⛰️ hiking",
+            "🏕️ camping",
+            "etc."
+          ],
+          "indoor": [
+            "♣️ card-games",
+            "🤖 (ai)-automation",
+            "🧑‍💻 (vibe)-coding",
+            "🐧 linux & open-source"
+          ]
+        },
+        "content": "\n# viele interessen, sowohl drinnen, als auch draussen! ☺️\n\n## Indoor\n\nWenn ich gerade nicht am Arbeiten bin, sitze ich dennoch manchmal am Computer und nerde etwas herum, indem ich z.B. eine neue Linux-Distribution ausprobiere...\n\nOder mein Daten nach und nach aus der US-Cloud nach Europa migriere um die Kontrolle über meine Daten zurückzuerhalten...\n\nMal entwickle ich auch ein Tool, oder eine Webseite wie diese hier.\n\nMal mit, mal ohne AI, wie ich gerde Lust habe.\n\n## Outdoor\n\nBei schönem Wetter ziehts mich dann aber auch mal nach draussen, z.B. auf eienen Gipfel in der Schweiz. Ganz egal ob Sommer oder Winter.\n\n![alt text](<Schneeweekend Collage.jpg>)\n\nWasser ist dabei voll und ganz mein Element. Ob gefroren mit den Ski oder flüssig mit dem Kajak, da fühl ich mich einfach wohl!\n"
       }
     ]
   },
