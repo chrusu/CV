@@ -61,7 +61,7 @@ export const themes: Theme[] = [
         },
         font: '"Share Tech Mono", monospace',
         borderRadius: '0.75rem',
-        backgroundImage: 'linear-gradient(to bottom right, #fffdf7, #f0eadd)',
+        backgroundImage: 'linear-gradient(to bottom right, #fcf9ee, #dcd5c6)',
     },
     {
         id: 'nerd',
