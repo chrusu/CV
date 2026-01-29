@@ -36,6 +36,7 @@ function parseFile(filePath) {
 function scanDirectory(dir) {
     const items = fs.readdirSync(dir);
     const result = [];
+    const fileGroups = new Map();
 
     for (const item of items) {
         if (item.startsWith('.')) continue; // Skip hidden files
@@ -50,19 +51,38 @@ function scanDirectory(dir) {
                 children: scanDirectory(fullPath)
             });
         } else if (item.endsWith('.md')) {
-            const { frontmatter, body } = parseFile(fullPath);
-            result.push({
-                type: 'file',
-                name: item,
-                frontmatter,
-                content: body
-            });
+             // Check for language extension
+             const match = item.match(/^(.*?)(\.([a-z]{2}))?\.md$/);
+             if (match) {
+                 const baseName = match[1] + '.md'; // Keep .md in the name for consistency
+                 const lang = match[3] || 'de'; // Default to 'de' if no language extension
+                 
+                 if (!fileGroups.has(baseName)) {
+                     fileGroups.set(baseName, {
+                          type: 'file',
+                          name: baseName,
+                          translations: {}
+                     });
+                 }
+                 
+                 const { frontmatter, body } = parseFile(fullPath);
+                 fileGroups.get(baseName).translations[lang] = {
+                     frontmatter, 
+                     content: body
+                 };
+             }
         } else if (item.endsWith('.webp') || item.endsWith('.png') || item.endsWith('.jpg') || item.endsWith('.jpeg') || item.endsWith('.gif')) {
              // Copy images to public folder
              fs.copyFileSync(fullPath, path.join(PUBLIC_ASSETS_DIR, item));
              console.log(`Copied asset: ${item}`);
         }
     }
+
+    // Add grouped files to result
+    for (const fileNode of fileGroups.values()) {
+        result.push(fileNode);
+    }
+
     return result;
 }
 
