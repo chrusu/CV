@@ -6,44 +6,90 @@
       {
         "type": "file",
         "name": "about me.md",
-        "frontmatter": {
-          "name": [
-            "Tobias Hinderling"
-          ],
-          "skills": [
-            "web-design",
-            "web-development",
-            "ux-design",
-            "ai-automation"
-          ],
-          "social-skills": [
-            "pragmatic",
-            "keep it simple",
-            "direct communication",
-            "coffee drinking ☕️"
-          ]
-        },
-        "content": "\n# i bi dr tobi, freut mi di kennezlehre! ☺️\n\n![tobias hinderling am arbeitsplatz](tobi_workplace.webp)\n\nIch bin passionierter Frontend-Entwickler und UX/UI-Designer mit einem Flair für pragmatische Lösungen.\n\n> Mein Motto: KISS - Keep it Simple Stupid\n\nIch versuche möglichst schlanke, wartungsfreie Lösungen zu erarbeiten.\n\nDabei setze ich auf AI - aber nur wo es Sinn ergibt!\n"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "name": [
+                "Tobias Hinderling"
+              ],
+              "skills": [
+                "web-design",
+                "web-development",
+                "ux-design",
+                "ai-automation"
+              ],
+              "social-skills": [
+                "pragmatic",
+                "keep it simple",
+                "direct communication",
+                "coffee drinking ☕️"
+              ]
+            },
+            "content": "\n# i'm tobi, nice to meet you! ☺️\n\n![tobias hinderling at workplace](tobi_workplace.webp)\n\nI am a passionate frontend developer and UX/UI designer with a flair for pragmatic solutions.\n\n> My motto: KISS - Keep it Simple Stupid\n\nI try to develop lean, maintenance-free solutions whenever possible.\n\nI use AI - but only where it makes sense!\n"
+          },
+          "de": {
+            "frontmatter": {
+              "name": [
+                "Tobias Hinderling"
+              ],
+              "skills": [
+                "web-design",
+                "web-development",
+                "ux-design",
+                "ai-automation"
+              ],
+              "social-skills": [
+                "pragmatic",
+                "keep it simple",
+                "direct communication",
+                "coffee drinking ☕️"
+              ]
+            },
+            "content": "\n# i bi dr tobi, freut mi di kennezlehre! ☺️\n\n![tobias hinderling am arbeitsplatz](tobi_workplace.webp)\n\nIch bin passionierter Frontend-Entwickler und UX/UI-Designer mit einem Flair für pragmatische Lösungen.\n\n> Mein Motto: KISS - Keep it Simple Stupid\n\nIch versuche möglichst schlanke, wartungsfreie Lösungen zu erarbeiten.\n\nDabei setze ich auf AI - aber nur wo es Sinn ergibt!\n"
+          }
+        }
       },
       {
         "type": "file",
         "name": "interessen.md",
-        "frontmatter": {
-          "outdoor": [
-            "🎿 backcountry skiing",
-            "🛶 white-water-kajak",
-            "⛰️ hiking",
-            "🏕️ camping",
-            "etc."
-          ],
-          "indoor": [
-            "♣️ card-games",
-            "🤖 (ai)-automation",
-            "🧑‍💻 (vibe)-coding",
-            "🐧 linux & open-source"
-          ]
-        },
-        "content": "\n# viele interessen, sowohl drinnen, als auch draussen! ☺️\n\n## Indoor\n\nWenn ich gerade nicht am Arbeiten bin, sitze ich dennoch manchmal am Computer und nerde etwas herum, indem ich z.B. eine neue Linux-Distribution ausprobiere...\n\nOder mein Daten nach und nach aus der US-Cloud nach Europa migriere um die Kontrolle über meine Daten zurückzuerhalten...\n\nMal entwickle ich auch ein Tool, oder eine Webseite wie diese hier.\n\nMal mit, mal ohne AI, wie ich gerde Lust habe.\n\n## Outdoor\n\nBei schönem Wetter ziehts mich dann aber auch mal nach draussen, z.B. auf eienen Gipfel in der Schweiz. Ganz egal ob Sommer oder Winter.\n\n![alt text](<Schneeweekend Collage.jpg>)\n\nWasser ist dabei voll und ganz mein Element. Ob gefroren mit den Ski oder flüssig mit dem Kajak, da fühl ich mich einfach wohl!\n"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "outdoor": [
+                "🎿 backcountry skiing",
+                "🛶 white-water-kajak",
+                "⛰️ hiking",
+                "🏕️ camping",
+                "etc."
+              ],
+              "indoor": [
+                "♣️ card-games",
+                "🤖 (ai)-automation",
+                "🧑‍💻 (vibe)-coding",
+                "🐧 linux & open-source"
+              ]
+            },
+            "content": "\n# many interests, both indoors and outdoors! ☺️\n\n## Indoor\n\nWhen I'm not working, I still sometimes sit at the computer and nerd around a bit, e.g. by trying out a new Linux distribution...\n\nOr migrating my data bit by bit from the US cloud to Europe to regain control over my data...\n\nSometimes I also develop a tool, or a website like this one.\n\nSometimes with, sometimes without AI, just as I feel like.\n\n## Outdoor\n\nWhen the weather is nice, I am drawn outside, e.g. to a summit in Switzerland. Whether summer or winter, it doesn't matter.\n\n![alt text](<Schneeweekend Collage.jpg>)\n\nWater is absolutely my element. Whether frozen with skis or liquid with a kayak, I just feel comfortable there!\n"
+          },
+          "de": {
+            "frontmatter": {
+              "outdoor": [
+                "🎿 backcountry skiing",
+                "🛶 white-water-kajak",
+                "⛰️ hiking",
+                "🏕️ camping",
+                "etc."
+              ],
+              "indoor": [
+                "♣️ card-games",
+                "🤖 (ai)-automation",
+                "🧑‍💻 (vibe)-coding",
+                "🐧 linux & open-source"
+              ]
+            },
+            "content": "\n# viele interessen, sowohl drinnen, als auch draussen! ☺️\n\n## Indoor\n\nWenn ich gerade nicht am Arbeiten bin, sitze ich dennoch manchmal am Computer und nerde etwas herum, indem ich z.B. eine neue Linux-Distribution ausprobiere...\n\nOder mein Daten nach und nach aus der US-Cloud nach Europa migriere um die Kontrolle über meine Daten zurückzuerhalten...\n\nMal entwickle ich auch ein Tool, oder eine Webseite wie diese hier.\n\nMal mit, mal ohne AI, wie ich gerde Lust habe.\n\n## Outdoor\n\nBei schönem Wetter ziehts mich dann aber auch mal nach draussen, z.B. auf eienen Gipfel in der Schweiz. Ganz egal ob Sommer oder Winter.\n\n![alt text](<Schneeweekend Collage.jpg>)\n\nWasser ist dabei voll und ganz mein Element. Ob gefroren mit den Ski oder flüssig mit dem Kajak, da fühl ich mich einfach wohl!\n"
+          }
+        }
       }
     ]
   },
@@ -54,135 +100,272 @@
       {
         "type": "file",
         "name": "ausbildungen.md",
-        "frontmatter": {
-          "grundausbildung": [
-            "primary school",
-            "secondary school"
-          ],
-          "timeline": [
-            {
-              "title": "Interaction Design HF",
-              "institution": "Schule für Gestaltung Bern",
-              "date": "August 2020 - Juni 2023",
-              "location": "Bern"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "education": [
+                "primary school",
+                "secondary school"
+              ],
+              "timeline": [
+                {
+                  "title": "Interaction Design HF",
+                  "institution": "Schule für Gestaltung Bern",
+                  "date": "August 2020 - June 2023",
+                  "location": "Bern"
+                },
+                {
+                  "title": "CAS Web Usability",
+                  "institution": "FFHS",
+                  "date": "February 2017 - June 2017",
+                  "location": "Regensdorf-Watt"
+                },
+                {
+                  "title": "Dipl. Ing. in Computer Science",
+                  "institution": "Engineering School Biel",
+                  "date": "October 2003 - January 2007",
+                  "location": "Biel"
+                },
+                {
+                  "title": "Apprenticeship as IT Specialist",
+                  "institution": "Swisscom AG",
+                  "date": "August 1999 - July 2003",
+                  "location": "Biel / Bern"
+                }
+              ]
             },
-            {
-              "title": "CAS Web Usability",
-              "institution": "FFHS",
-              "date": "Februar 2017 - Juni 2017",
-              "location": "Regensdorf-Watt"
+            "content": ""
+          },
+          "de": {
+            "frontmatter": {
+              "grundausbildung": [
+                "primary school",
+                "secondary school"
+              ],
+              "timeline": [
+                {
+                  "title": "Interaction Design HF",
+                  "institution": "Schule für Gestaltung Bern",
+                  "date": "August 2020 - Juni 2023",
+                  "location": "Bern"
+                },
+                {
+                  "title": "CAS Web Usability",
+                  "institution": "FFHS",
+                  "date": "Februar 2017 - Juni 2017",
+                  "location": "Regensdorf-Watt"
+                },
+                {
+                  "title": "Dipl. Ing. in Informatik",
+                  "institution": "Ingenieurschule Biel",
+                  "date": "Oktober 2003 - Januar 2007",
+                  "location": "Biel"
+                },
+                {
+                  "title": "Lehre als Informatiker",
+                  "institution": "Swisscom AG",
+                  "date": "August 1999 - Juli 2003",
+                  "location": "Biel / Bern"
+                }
+              ]
             },
-            {
-              "title": "Dipl. Ing. in Informatik",
-              "institution": "Ingenieurschule Biel",
-              "date": "Oktober 2003 - Januar 2007",
-              "location": "Biel"
-            },
-            {
-              "title": "Lehre als Informatiker",
-              "institution": "Swisscom AG",
-              "date": "August 1999 - Juli 2003",
-              "location": "Biel / Bern"
-            }
-          ]
-        },
-        "content": ""
+            "content": ""
+          }
+        }
       },
       {
         "type": "file",
         "name": "jobs.md",
-        "frontmatter": {
-          "zwischenverdienste": [
-            "🎿 Allrounder, Detailhandel, Bayard Sport & Fashion Zermatt",
-            "🍻 Bier-Lieferant, La Marmotte Biel"
-          ],
-          "timeline": [
-            {
-              "title": "Dozent",
-              "institution": "Schule für Gestaltung Bern und Biel",
-              "date": "August 2024 - bisher",
-              "location": "Bern und Biel",
-              "details": [
-                "Frontend Development für Interaction Designer HF",
-                "Frontend Development für die Grafikfachklasse EFZ",
-                "Web-Design-Projekt für die Grafikfachklasse EFZ"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "interim earnings": [
+                "🎿 Allrounder, Retail, Bayard Sport & Fashion Zermatt",
+                "🍻 Beer Supplier, La Marmotte Biel"
+              ],
+              "timeline": [
+                {
+                  "title": "Lecturer",
+                  "institution": "School of Design Bern and Biel",
+                  "date": "August 2024 - present",
+                  "location": "Bern and Biel",
+                  "details": [
+                    "Frontend Development for Interaction Designer HF",
+                    "Frontend Development for Graphic Design Class EFZ",
+                    "Web Design Project for Graphic Design Class EFZ"
+                  ]
+                },
+                {
+                  "title": "Web Design & Development",
+                  "institution": "Hinderling Internet Handwerk",
+                  "date": "January 2024 - present",
+                  "location": "Biel",
+                  "details": [
+                    "Web Design",
+                    "Web Development",
+                    "AI Automation"
+                  ]
+                },
+                {
+                  "title": "Product Management / UX Consultant",
+                  "institution": "Puzzle ITC",
+                  "date": "November 2020 - October 2024",
+                  "location": "Bern",
+                  "details": [
+                    "Product Management",
+                    "Project Management",
+                    "UX Consultant"
+                  ]
+                },
+                {
+                  "title": "Logistics",
+                  "institution": "Brasserie La Marmotte GmbH",
+                  "date": "May 2020 - November 2020",
+                  "location": "Biel",
+                  "details": [
+                    "Delivery",
+                    "Bottling"
+                  ]
+                },
+                {
+                  "title": "Professional Software Developer",
+                  "institution": "SwissTXT AG",
+                  "date": "November 2012 - November 2019",
+                  "location": "Biel",
+                  "details": [
+                    "Project Management Live Event Streaming Platform",
+                    "Usability Engineering TV Application",
+                    "Software Development TV Applications (HbbTV)"
+                  ]
+                },
+                {
+                  "title": "Web Developer",
+                  "institution": "Biznet AG",
+                  "date": "June 2011 - August 2012",
+                  "location": "Schönbühl",
+                  "details": [
+                    "Web development of customer websites with ContentXXL"
+                  ]
+                },
+                {
+                  "title": "Web Developer",
+                  "institution": "Modan Software AG",
+                  "date": "January 2011 - March 2011",
+                  "location": "Kirchberg",
+                  "details": [
+                    "CRM Further Development",
+                    "Extension of the existing modan-CMS"
+                  ]
+                },
+                {
+                  "title": "Web Developer",
+                  "institution": "W. Gassmann AG",
+                  "date": "May 2007 - December 2010",
+                  "location": "Biel",
+                  "details": [
+                    "Web development [https://www.bielertagblatt.ch](https://www.bielertagblatt.ch)",
+                    "Web development of customer websites with Joomla"
+                  ]
+                }
               ]
             },
-            {
-              "title": "Web-Design & Development",
-              "institution": "Hinderling Internet Handwerk",
-              "date": "Januar 2024 - bisher",
-              "location": "Biel",
-              "details": [
-                "Web-Design",
-                "Web-Development",
-                "AI-Automation"
+            "content": ""
+          },
+          "de": {
+            "frontmatter": {
+              "zwischenverdienste": [
+                "🎿 Allrounder, Detailhandel, Bayard Sport & Fashion Zermatt",
+                "🍻 Bier-Lieferant, La Marmotte Biel"
+              ],
+              "timeline": [
+                {
+                  "title": "Dozent",
+                  "institution": "Schule für Gestaltung Bern und Biel",
+                  "date": "August 2024 - bisher",
+                  "location": "Bern und Biel",
+                  "details": [
+                    "Frontend Development für Interaction Designer HF",
+                    "Frontend Development für die Grafikfachklasse EFZ",
+                    "Web-Design-Projekt für die Grafikfachklasse EFZ"
+                  ]
+                },
+                {
+                  "title": "Web-Design & Development",
+                  "institution": "Hinderling Internet Handwerk",
+                  "date": "Januar 2024 - bisher",
+                  "location": "Biel",
+                  "details": [
+                    "Web-Design",
+                    "Web-Development",
+                    "AI-Automation"
+                  ]
+                },
+                {
+                  "title": "Product Management / UX Consultant",
+                  "institution": "Puzzle ITC",
+                  "date": "November 2020 - Oktober 2024",
+                  "location": "Bern",
+                  "details": [
+                    "Product Management",
+                    "Project Management",
+                    "UX Consultant"
+                  ]
+                },
+                {
+                  "title": "Logistik",
+                  "institution": "Brasserie La Marmotte GmbH",
+                  "date": "Mai 2020 - November 2020",
+                  "location": "Biel",
+                  "details": [
+                    "Auslieferung",
+                    "Abfüllung"
+                  ]
+                },
+                {
+                  "title": "Professional Software Developer",
+                  "institution": "SwissTXT AG",
+                  "date": "November 2012 - November 2019",
+                  "location": "Biel",
+                  "details": [
+                    "Projektleitung Live Event Streaming Plattform",
+                    "Usability Engineering TV Applikation",
+                    "Software-Entwicklung TV Applikationen (HbbTV)"
+                  ]
+                },
+                {
+                  "title": "Web Developer",
+                  "institution": "Biznet AG",
+                  "date": "Juni 2011 - August 2012",
+                  "location": "Schönbühl",
+                  "details": [
+                    "Webentwicklung von Kundenwebseiten mit ContentXXL"
+                  ]
+                },
+                {
+                  "title": "Web Developer",
+                  "institution": "Modan Software AG",
+                  "date": "Januar 2011 - März 2011",
+                  "location": "Kirchberg",
+                  "details": [
+                    "CRM-Weiterentwicklung",
+                    "Erweiterung des bestehenden modan-CMS"
+                  ]
+                },
+                {
+                  "title": "Web Developer",
+                  "institution": "W. Gassmann AG",
+                  "date": "Mai 2007 - Dezember 2010",
+                  "location": "Biel",
+                  "details": [
+                    "Webentwicklung [https://www.bielertagblatt.ch](https://www.bielertagblatt.ch)",
+                    "Webentwicklung von Kundenwebseiten mit Joomla"
+                  ]
+                }
               ]
             },
-            {
-              "title": "Product Management / UX Consultant",
-              "institution": "Puzzle ITC",
-              "date": "November 2020 - Oktober 2024",
-              "location": "Bern",
-              "details": [
-                "Product Management",
-                "Project Management",
-                "UX Consultant"
-              ]
-            },
-            {
-              "title": "Logistik",
-              "institution": "Brasserie La Marmotte GmbH",
-              "date": "Mai 2020 - November 2020",
-              "location": "Biel",
-              "details": [
-                "Auslieferung",
-                "Abfüllung"
-              ]
-            },
-            {
-              "title": "Professional Software Developer",
-              "institution": "SwissTXT AG",
-              "date": "November 2012 - November 2019",
-              "location": "Biel",
-              "details": [
-                "Projektleitung Live Event Streaming Plattform",
-                "Usability Engineering TV Applikation",
-                "Software-Entwicklung TV Applikationen (HbbTV)"
-              ]
-            },
-            {
-              "title": "Web Developer",
-              "institution": "Biznet AG",
-              "date": "Juni 2011 - August 2012",
-              "location": "Schönbühl",
-              "details": [
-                "Webentwicklung von Kundenwebseiten mit ContentXXL"
-              ]
-            },
-            {
-              "title": "Web Developer",
-              "institution": "Modan Software AG",
-              "date": "Januar 2011 - März 2011",
-              "location": "Kirchberg",
-              "details": [
-                "CRM-Weiterentwicklung",
-                "Erweiterung des bestehenden modan-CMS"
-              ]
-            },
-            {
-              "title": "Web Developer",
-              "institution": "W. Gassmann AG",
-              "date": "Mai 2007 - Dezember 2010",
-              "location": "Biel",
-              "details": [
-                "Webentwicklung [https://www.bielertagblatt.ch](https://www.bielertagblatt.ch)",
-                "Webentwicklung von Kundenwebseiten mit Joomla"
-              ]
-            }
-          ]
-        },
-        "content": ""
+            "content": ""
+          }
+        }
       }
     ]
   },
@@ -193,107 +376,220 @@
       {
         "type": "file",
         "name": "agfar.md",
-        "frontmatter": {
-          "tags": [
-            "concept",
-            "design",
-            "development"
-          ],
-          "tooling": [
-            "figma",
-            "relume",
-            "webflow"
-          ],
-          "year": [
-            2024,
-            2025
-          ],
-          "link": "https://www.agfar.ch",
-          "cta": {
-            "text": "sondermaschine us bieu",
-            "button": "das wotti gseh!",
-            "link": "https://www.agfar.ch"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "tags": [
+                "concept",
+                "design",
+                "development"
+              ],
+              "tooling": [
+                "figma",
+                "relume",
+                "webflow"
+              ],
+              "year": [
+                2024,
+                2025
+              ],
+              "link": "https://www.agfar.ch",
+              "cta": {
+                "text": "special machine from biel",
+                "button": "I want to see that!",
+                "link": "https://www.agfar.ch"
+              }
+            },
+            "content": "\n# Agfar AG\n\nFor AGFAR (AG for Automation and Robotics) I had the privilege to design and implement a new web presence.\n\nThe technical DNA of the company should be visible on the website.\n\n![Homepage AGFAR AG](agfar.png)\n\nThe greatest difficulty turned out to be structuring the many complex contents on the website in such a way that they are found, but also understood.\n\n![Pink Lady - The Agfar Jukebox](<pink lady.png>)\n"
+          },
+          "de": {
+            "frontmatter": {
+              "tags": [
+                "concept",
+                "design",
+                "development"
+              ],
+              "tooling": [
+                "figma",
+                "relume",
+                "webflow"
+              ],
+              "year": [
+                2024,
+                2025
+              ],
+              "link": "https://www.agfar.ch",
+              "cta": {
+                "text": "sondermaschine us bieu",
+                "button": "das wotti gseh!",
+                "link": "https://www.agfar.ch"
+              }
+            },
+            "content": "\n# Agfar AG\n\nFür die AGFAR (AG für Automation und Robotik) durfte ich einen neuen Webauftritt gestalten und umsetzen.\n\nDabei sollte die technische DNA der Firma auf der Webseite sichtbar sein.\n\n![Startseite AGFAR AG](agfar.png)\n\nAls grösste Schwierigkeit erwies sich, die vielen Komplexen Inhalte auf der Webseite so zu strukturieren, dass sie zum einen gefunden, aber auch verstanden werden.\n\n![Pink Lady - Die Agfar-Juckebox](<pink lady.png>)\n"
           }
-        },
-        "content": "\n# Agfar AG\n\nFür die AGFAR (AG für Automation und Robotik) durfte ich einen neuen Webauftritt gestalten und umsetzen.\n\nDabei sollte die technische DNA der Firma auf der Webseite sichtbar sein.\n\n![Startseite AGFAR AG](agfar.png)\n\nAls grösste Schwierigkeit erwies sich, die vielen Komplexen Inhalte auf der Webseite so zu strukturieren, dass sie zum einen gefunden, aber auch verstanden werden.\n\n![Pink Lady - Die Agfar-Juckebox](<pink lady.png>)\n"
+        }
       },
       {
         "type": "file",
         "name": "netiva.md",
-        "frontmatter": {
-          "tags": [
-            "design",
-            "development"
-          ],
-          "technologies / tools": [
-            "figma",
-            "relume",
-            "webflow"
-          ],
-          "year": [
-            2024
-          ],
-          "link": "https://www.netiva.ch",
-          "cta": {
-            "text": "netiva.ch",
-            "button": "muesch gseh ha!",
-            "link": "https://www.netiva.ch"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "tags": [
+                "design",
+                "development"
+              ],
+              "technologies / tools": [
+                "figma",
+                "relume",
+                "webflow"
+              ],
+              "year": [
+                2024
+              ],
+              "link": "https://www.netiva.ch",
+              "cta": {
+                "text": "netiva.ch",
+                "button": "must see!",
+                "link": "https://www.netiva.ch"
+              }
+            },
+            "content": "\n# Netiva\n\nI had the pleasure of accompanying Netiva, based in Liebefeld, to a new website with Webflow.\n\n![new homepage netiva.ch](netiva.png)\n\nThanks to the efficient cooperation, the new website could go live within a very short time.\n"
+          },
+          "de": {
+            "frontmatter": {
+              "tags": [
+                "design",
+                "development"
+              ],
+              "technologies / tools": [
+                "figma",
+                "relume",
+                "webflow"
+              ],
+              "year": [
+                2024
+              ],
+              "link": "https://www.netiva.ch",
+              "cta": {
+                "text": "netiva.ch",
+                "button": "muesch gseh ha!",
+                "link": "https://www.netiva.ch"
+              }
+            },
+            "content": "\n# Netiva\n\nDie Netiva mit Sitz in Liebefeld durfte ich zu einer neuen Webseite mit Webflow begleiten.\n\n![neue startseite netiva.ch](netiva.png)\n\nDurch die speditive Zusammenarbeit konnte die neue Webseite innert kürzester Zeit live gehen.\n"
           }
-        },
-        "content": "\n# Netiva\n\nDie Netiva mit Sitz in Liebefeld durfte ich zu einer neuen Webseite mit Webflow begleiten.\n\n![neue startseite netiva.ch](netiva.png)\n\nDurch die speditive Zusammenarbeit konnte die neue Webseite innert kürzester Zeit live gehen.\n"
+        }
       },
       {
         "type": "file",
         "name": "openair am bielersee.md",
-        "frontmatter": {
-          "tags": [
-            "concept",
-            "design",
-            "illustration",
-            "development"
-          ],
-          "technologies / tools": [
-            "figma",
-            "affinity designer",
-            "kirby cms"
-          ],
-          "year": [
-            2025
-          ],
-          "link": "https://www.openairambielersee.ch",
-          "cta": {
-            "text": "d website i vouer pracht!",
-            "button": "das wotti gseh!",
-            "link": "https://www.openairambielersee.ch"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "tags": [
+                "concept",
+                "design",
+                "illustration",
+                "development"
+              ],
+              "technologies / tools": [
+                "figma",
+                "affinity designer",
+                "kirby cms"
+              ],
+              "year": [
+                2025
+              ],
+              "link": "https://www.openairambielersee.ch",
+              "cta": {
+                "text": "the website in full splendor!",
+                "button": "I want to see that!",
+                "link": "https://www.openairambielersee.ch"
+              }
+            },
+            "content": "\n# Openair am Bielersee\n\nThe somewhat different website - for the somewhat different openair festival.\n\nThe Openair am Bielersee is deliberately different:\n\n- Stage made of wood\n- Actually everything made of wood\n- No sponsors\n- Family atmosphere\n\nFor over 30 years, this somewhat different openair has thrilled its visitors and is regularly sold out.\n\nWe wanted to implement this spirit as a website. Thus the idea was born to give the website a stage.\n\n![homepage openair am bielersee](openair_am_bielersee.png)\n\nThis is what the openair looks like in real life!\n\n![Openair at night](openair_nacht.jpg)\n"
+          },
+          "de": {
+            "frontmatter": {
+              "tags": [
+                "concept",
+                "design",
+                "illustration",
+                "development"
+              ],
+              "technologies / tools": [
+                "figma",
+                "affinity designer",
+                "kirby cms"
+              ],
+              "year": [
+                2025
+              ],
+              "link": "https://www.openairambielersee.ch",
+              "cta": {
+                "text": "d website i vouer pracht!",
+                "button": "das wotti gseh!",
+                "link": "https://www.openairambielersee.ch"
+              }
+            },
+            "content": "\n# Openair am Bielersee\n\nDie etwas andere Webseite - für das etwas andere Openair.\n\nDas Openair am Bielersee ist bewusst anders:\n\n- Bühne aus Holze\n- Eigentlich alles aus Holz\n- Keine Sponsoren\n- Familiäre Atmosphäre\n\nSeit über 30 Jahren begeistert das etas ander Openair seine besucher und ist regelmässig Ausverkauft.\n\nDiesen Spirit wollten wir als Webseite umsetzen. So entstand die Idee, der Webseite eine Bühne zu geben.\n\n![startseite openair am bielersee](openair_am_bielersee.png)\n\nSo sieht das Openair in echt aus!\n\n![Openair bei Nacht](openair_nacht.jpg)\n"
           }
-        },
-        "content": "\n# Openair am Bielersee\n\nDie etwas andere Webseite - für das etwas andere Openair.\n\nDas Openair am Bielersee ist bewusst anders:\n\n- Bühne aus Holze\n- Eigentlich alles aus Holz\n- Keine Sponsoren\n- Familiäre Atmosphäre\n\nSeit über 30 Jahren begeistert das etas ander Openair seine besucher und ist regelmässig Ausverkauft.\n\nDiesen Spirit wollten wir als Webseite umsetzen. So entstand die Idee, der Webseite eine Bühne zu geben.\n\n![startseite openair am bielersee](openair_am_bielersee.png)\n\nSo sieht das Openair in echt aus!\n\n![Openair bei Nacht](openair_nacht.jpg)\n"
+        }
       },
       {
         "type": "file",
         "name": "teletext.md",
-        "frontmatter": {
-          "tags": [
-            "concept",
-            "design",
-            "development"
-          ],
-          "technologies / tools": [
-            "figma",
-            "reactjs",
-            "expressjs"
-          ],
-          "year": [
-            2025
-          ],
-          "link": "https://www.teletext.ch",
-          "cta": {
-            "text": "lueg hie, wie das ganze usgseht",
-            "button": "los geits",
-            "link": "https://www.teletext.ch"
+        "translations": {
+          "en": {
+            "frontmatter": {
+              "tags": [
+                "concept",
+                "design",
+                "development"
+              ],
+              "technologies / tools": [
+                "figma",
+                "reactjs",
+                "expressjs"
+              ],
+              "year": [
+                2025
+              ],
+              "link": "https://www.teletext.ch",
+              "cta": {
+                "text": "see how it looks here",
+                "button": "let's go",
+                "link": "https://www.teletext.ch"
+              }
+            },
+            "content": "\n# Teletext - A Success Story\n\nWhen Teletext was launched in Switzerland in 1984, I was just 1 year old.\n\nSince then, I have had the privilege of contributing to the redevelopment of the teletext.ch website twice.\n\nWill there be a third time? It would be an honor ;)\n\n![teletext.ch website](txt.png)\n"
+          },
+          "de": {
+            "frontmatter": {
+              "tags": [
+                "concept",
+                "design",
+                "development"
+              ],
+              "technologies / tools": [
+                "figma",
+                "reactjs",
+                "expressjs"
+              ],
+              "year": [
+                2025
+              ],
+              "link": "https://www.teletext.ch",
+              "cta": {
+                "text": "lueg hie, wie das ganze usgseht",
+                "button": "los geits",
+                "link": "https://www.teletext.ch"
+              }
+            },
+            "content": "\n# Teletext - Eine Erfolgsgeschichte\n\nAls der Teletext 1984 in der Schweiz in Betrieb genommen wurde, war ich gerade mal 1 Jahr alt.\n\nSeither durfte ich bereits 2x bei der Neuentwicklung der Webseite teletext.ch mitwirken.\n\nOb es noch ein 3tes mal geben wird? Es wäre mir eine Ehre ;)\n\n![webseite teletext.ch](txt.png)\n"
           }
-        },
-        "content": "\n# Teletext - Eine Erfolgsgeschichte\n\nAls der Teletext 1984 in der Schweiz in Betrieb genommen wurde, war ich gerade mal 1 Jahr alt.\n\nSeither durfte ich bereits 2x bei der Neuentwicklung der Webseite teletext.ch mitwirken.\n\nOb es noch ein 3tes mal geben wird? Es wäre mir eine Ehre ;)\n\n![webseite teletext.ch](txt.png)\n"
+        }
       }
     ]
   }

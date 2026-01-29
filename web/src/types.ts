@@ -5,11 +5,17 @@ export interface Frontmatter {
     [key: string]: any;
 }
 
+export interface FileContent {
+    frontmatter: Frontmatter;
+    content: string;
+}
+
 export interface FileNode {
     type: 'file';
     name: string;
-    frontmatter: Frontmatter;
-    content: string;
+    translations: {
+        [lang: string]: FileContent;
+    };
 }
 
 export interface FolderNode {

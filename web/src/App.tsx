@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { Content } from './components/Content';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
+import { LanguageSwitcher } from './components/LanguageSwitcher';
 import contentData from './data/content.json';
 import type { ContentNode, FileNode } from './types';
 import { Menu, X, ArrowUp, ArrowDown, CornerDownLeft } from 'lucide-react';
@@ -246,7 +247,10 @@ function App() {
                 <span>scroll</span>
             </div>
           </div>
-          <ThemeSwitcher />
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </div>

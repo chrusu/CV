@@ -4,17 +4,24 @@ import remarkGfm from 'remark-gfm';
 import { ExternalLink } from 'lucide-react';
 import type { FileNode } from '../types';
 import { Lightbox } from './Lightbox';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ContentProps {
     file: FileNode | null;
 }
 
 export const Content: React.FC<ContentProps> = ({ file }) => {
+    const { language } = useLanguage();
     const [lightboxImage, setLightboxImage] = useState<{src: string, alt?: string} | null>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
     const [contentHeight, setContentHeight] = useState(0);
     const [minLines, setMinLines] = useState(0);
+
+    // Resolve content based on language
+    const currentTranslation = file ? (file.translations[language] || file.translations['de'] || Object.values(file.translations)[0]) : null;
+    const frontmatter = currentTranslation?.frontmatter;
+    const content = currentTranslation?.content;
 
     useEffect(() => {
         const updateMinLines = () => {
@@ -56,9 +63,9 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
         
         observer.observe(contentRef.current);
         return () => observer.disconnect();
-    }, [file]);
+    }, [file, language]); // Added language to dependency
 
-    if (!file) {
+    if (!file || !currentTranslation) {
         return (
             <div className="h-full flex items-center justify-center text-gray-500 font-mono">
                 Select a file to view its content
@@ -102,10 +109,10 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                     <div className="flex-1 p-3 md:p-6">
                         <div ref={contentRef}>
                         {/* Frontmatter display */}
-                        {file.frontmatter && Object.keys(file.frontmatter).length > 0 && (
+                        {frontmatter && Object.keys(frontmatter).length > 0 && (
                             <div className="mb-8 font-mono text-[18px]">
                                 
-                                {Object.entries(file.frontmatter)
+                                {Object.entries(frontmatter)
                                     .filter(([key]) => key !== 'timeline' && key !== 'cta')
                                     .map(([key, value]) => (
                                     <div key={key} className={`mt-2 flex ${Array.isArray(value) ? 'flex-col' : 'flex-col sm:flex-row sm:items-start'} gap-2`}>
@@ -140,9 +147,9 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                         )}
 
                         {/* Timeline Display */}
-                        {file.frontmatter?.timeline && Array.isArray(file.frontmatter.timeline) && (
+                        {frontmatter?.timeline && Array.isArray(frontmatter.timeline) && (
                             <div className="mb-12 font-mono ml-2">
-                                {file.frontmatter.timeline.map((item: any, index: number) => (
+                                {frontmatter.timeline.map((item: any, index: number) => (
                                     <div key={index} className="relative pl-8 pb-8 border-l border-ui-border-ui last:border-l-0 last:pb-0">
                                         <div className="absolute left-[-5px] top-1.5 w-2.5 h-2.5 rounded-full bg-ui-highlight border border-bg-primary"></div>
                                         <div className="text-base text-ui-highlight mb-1">{item.date}</div>
@@ -189,21 +196,21 @@ export const Content: React.FC<ContentProps> = ({ file }) => {
                                     code: ({node, ...props}) => <code {...props} className="text-ui-highlight bg-white/5 px-1 py-0.5 rounded" />,
                                 }}
                             >
-                                {file.content}
+                                {content}
                             </ReactMarkdown>
                         </div>
 
                         {/* CTA Section */}
-                        {file.frontmatter?.cta && (
+                        {frontmatter?.cta && (
                             <div className="mt-12 mb-12 p-6 border border-ui-border-ui rounded-ui bg-bg-primary/30 backdrop-blur-sm">
-                                <p className="text-text-body mb-4 text-lg font-mono">{file.frontmatter.cta.text}</p>
+                                <p className="text-text-body mb-4 text-lg font-mono">{frontmatter.cta.text}</p>
                                 <a 
-                                    href={file.frontmatter.cta.link}
+                                    href={frontmatter.cta.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-ui-highlight text-bg-primary font-bold rounded hover:opacity-90 transition-opacity font-mono"
                                 >
-                                    {file.frontmatter.cta.button}
+                                    {frontmatter.cta.button}
                                     <ExternalLink size={18} />
                                 </a>
                             </div>
